@@ -1,0 +1,24 @@
+# Voz: micrófono -> faster-whisper local -> orden. Umbrales = heurísticas, no garantías.
+recorder:
+  seconds: 5.0
+  sample_rate: 16000
+  device: null              # null = dispositivo por defecto; índice o nombre (clawde devices audio)
+  min_duration_s: 0.5
+  min_rms: 0.004            # por debajo se considera silencio
+
+whisper:
+  model: "base"             # multilingüe: base o small (nunca *.en)
+  model_dir: "models/whisper"
+  device: "cpu"
+  compute_type: "int8"
+  language: "es"
+  beam_size: 1
+  max_no_speech_prob: 0.6
+  min_avg_logprob: -1.0
+  min_chars: 2
+
+tts:
+  enabled: true
+  voice: null               # null = primera voz es_* instalada; ver clawde devices voices
+  rate: 185
+  post_speech_pause_s: 0.3  # espera tras hablar antes de grabar

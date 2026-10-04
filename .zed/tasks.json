@@ -1,0 +1,11 @@
+[
+  { "label": "CLAWDE: ayuda", "command": ".venv/bin/clawde --help", "use_new_terminal": false },
+  { "label": "CLAWDE: doctor", "command": ".venv/bin/clawde doctor" },
+  { "label": "CLAWDE: simulación demo (texto)", "command": ".venv/bin/clawde run --sim --demo --text" },
+  { "label": "CLAWDE: simulación demo (voz)", "command": ".venv/bin/clawde run --sim --demo --voice" },
+  { "label": "CLAWDE: cámara 0 + voz (simulación)", "command": ".venv/bin/clawde run --sim --camera 0 --voice" },
+  { "label": "CLAWDE: probar cámara", "command": ".venv/bin/clawde camera --index 0" },
+  { "label": "CLAWDE: probar micrófono", "command": ".venv/bin/clawde voice-test --seconds 5" },
+  { "label": "CLAWDE: tests", "command": ".venv/bin/python -m pytest" },
+  { "label": "CLAWDE: ruff", "command": ".venv/bin/python -m ruff check ." }
+]

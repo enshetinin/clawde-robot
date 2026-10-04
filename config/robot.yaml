@@ -1,0 +1,23 @@
+# Brazo Adeept: modelo de placa, pines, geometría y calibración PENDIENTES.
+# No inventes valores: mientras falten, el movimiento real queda bloqueado.
+driver: "simulator"          # simulator | serial
+hardware_enabled: false
+calibrated: false
+
+board: null                  # PENDIENTE: modelo exacto de la placa Adeept
+port: null                   # PENDIENTE: p. ej. /dev/cu.usbserial-XXXX (clawde devices serial)
+baudrate: 115200
+protocol_version: 1
+
+servos: []                   # PENDIENTE: [{name, pin, min_deg, max_deg, home_deg, max_speed_dps}]
+geometry: null               # PENDIENTE: tipo de brazo y longitudes de eslabones (mm)
+workspace: null              # PENDIENTE: {x_min_mm, x_max_mm, y_min_mm, y_max_mm, z_min_mm, z_max_mm}
+hold_position_on_stop: null  # PENDIENTE: si los servos mantienen par tras STOP (no desconectar a ciegas)
+
+# Perfil ficticio SOLO para el simulador y la escena --demo. Nunca se usa con --real.
+demo_profile:
+  step_delay_s: 0.15
+  objects:
+    - {id: "red_1",  color: "red",  zone: "center", x_mm: 0.0,    y_mm: 200.0}
+    - {id: "blue_1", color: "blue", zone: "left",   x_mm: -120.0, y_mm: 180.0}
+    - {id: "blue_2", color: "blue", zone: "right",  x_mm: 120.0,  y_mm: 180.0}

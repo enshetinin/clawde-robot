@@ -1,0 +1,21 @@
+# Visión por segmentación HSV (OpenCV: H 0-179, S 0-255, V 0-255).
+camera:
+  index: 0
+  width: 1280
+  height: 720
+
+colors:
+  red:     # el rojo ocupa las dos bandas extremas del hue
+    - {lower: [0, 120, 70],   upper: [10, 255, 255]}
+    - {lower: [170, 120, 70], upper: [179, 255, 255]}
+  blue:
+    - {lower: [100, 150, 50], upper: [130, 255, 255]}
+  green:
+    - {lower: [40, 80, 50],   upper: [85, 255, 255]}
+
+min_area_px: 400
+max_area_px: 200000
+morph_kernel: 5
+tracking_max_distance_px: 60
+calibration_file: "config/table_calibration.json"
+max_calibration_rms_mm: 5.0

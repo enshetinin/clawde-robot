@@ -1,0 +1,21 @@
+// PLANTILLA. Copia a include/robot_config.h SOLO cuando tengas los datos medidos.
+// Todos los campos son OBLIGATORIOS; no hay valores por defecto "seguros".
+// Este firmware de diagnóstico NO usa este archivo: activar servos requerirá
+// implementar y verificar el control de servos (ver firmware/README.md).
+#pragma once
+
+#error "robot_config.h es una plantilla sin rellenar: completa los campos y elimina esta línea"
+
+// Placa exacta (p. ej. el modelo que venga con el kit Adeept):
+#define ROBOT_BOARD_NAME   /* REQUERIDO: "..." */
+
+// Número de servos y, para cada uno: pin, límites (grados), home y velocidad máxima.
+#define ROBOT_SERVO_COUNT  /* REQUERIDO */
+// static const uint8_t  SERVO_PINS[ROBOT_SERVO_COUNT]      = { /* REQUERIDO */ };
+// static const int16_t  SERVO_MIN_DEG[ROBOT_SERVO_COUNT]   = { /* REQUERIDO, medido */ };
+// static const int16_t  SERVO_MAX_DEG[ROBOT_SERVO_COUNT]   = { /* REQUERIDO, medido */ };
+// static const int16_t  SERVO_HOME_DEG[ROBOT_SERVO_COUNT]  = { /* REQUERIDO, medido */ };
+// static const uint16_t SERVO_MAX_DPS[ROBOT_SERVO_COUNT]   = { /* REQUERIDO */ };
+
+// ¿Mantienen los servos el par tras STOP? (no desconectar a ciegas: el brazo podría caer)
+#define ROBOT_HOLD_ON_STOP /* REQUERIDO: 1 o 0 */

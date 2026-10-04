@@ -1,0 +1,34 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.env
+
+# macOS
+.DS_Store
+
+# Zed: solo se versionan las tareas compartidas
+.zed/*
+!.zed/tasks.json
+
+# PlatformIO
+.pio/
+firmware/platformio.ini
+firmware/include/robot_config.h
+
+# CLAWDE runtime data (se conservan los .gitkeep)
+captures/*
+!captures/.gitkeep
+logs/*
+!logs/.gitkeep
+models/*
+!models/.gitkeep
+recordings/
+*.wav
+*.aiff
+config/table_calibration.json

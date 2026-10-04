@@ -1,0 +1,2 @@
+# Desarrollo: voz, visión, pytest y ruff (definidos en pyproject.toml).
+-e .[voice,vision,dev]

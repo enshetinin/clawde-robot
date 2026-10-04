@@ -1,0 +1,2 @@
+# Las dependencias se definen en pyproject.toml. Esto instala el paquete con voz y visión.
+-e .[voice,vision]

@@ -1,0 +1,18 @@
+; PLANTILLA de PlatformIO. Copia a platformio.ini cuando conozcas la PLACA EXACTA.
+; No se proporciona una placa por defecto a propósito (no se asume Arduino Uno).
+;
+;   cp platformio.ini.example platformio.ini
+;   # edita board/platform según la placa del kit Adeept
+;   pio run                 # compila el firmware de DIAGNÓSTICO (sin servos)
+;   pio run -t upload       # súbelo SOLO tras revisar firmware/README.md
+;
+; El firmware resultante solo responde PING/STATUS/ARM/DISARM/STOP;
+; HOME/GRIP/MOVE devuelven ERR NOT_CONFIGURED.
+
+[env:clawde_diag]
+platform = REQUIRED_PLATFORM      ; REQUERIDO, p. ej. atmelavr / espressif32 (según tu placa)
+board = REQUIRED_BOARD            ; REQUERIDO: id de `pio boards <nombre>`
+framework = arduino
+monitor_speed = 115200
+build_flags = -Wall -Wextra
+; NO añadas -DCLAWDE_ENABLE_SERVOS: el control de servos no está implementado.

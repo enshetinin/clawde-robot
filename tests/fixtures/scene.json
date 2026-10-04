@@ -1,0 +1,15 @@
+{
+  "source": "fixture",
+  "timestamp": 0.0,
+  "frame_size": [1280, 720],
+  "calibrated": false,
+  "tracking_ambiguous": false,
+  "objects": [
+    {"id": "red_1", "color": "red", "center_px": [200.0, 400.0], "bbox_px": [170, 370, 60, 60],
+     "area_px": 3600.0, "timestamp": 0.0, "zone": "left"},
+    {"id": "red_2", "color": "red", "center_px": [1080.0, 400.0], "bbox_px": [1050, 370, 60, 60],
+     "area_px": 3600.0, "timestamp": 0.0, "zone": "right"},
+    {"id": "blue_1", "color": "blue", "center_px": [640.0, 420.0], "bbox_px": [610, 390, 60, 60],
+     "area_px": 3600.0, "timestamp": 0.0, "zone": "center"}
+  ]
+}

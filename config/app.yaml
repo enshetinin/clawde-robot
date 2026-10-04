@@ -1,0 +1,15 @@
+# Configuración general de CLAWDE. Las rutas relativas se resuelven desde la raíz del proyecto.
+ollama:
+  host: "http://127.0.0.1:11434"   # solo se aceptan hosts loopback
+  model: "qwen3.5:4b"              # debe estar instalado localmente (ollama list)
+  timeout_s: 60                    # timeout finito por petición
+  temperature: 0.0
+  max_retries: 1                   # como máximo un reintento acotado
+  think: false
+
+interpreter: "auto"        # auto | rules | ollama
+queue_maxsize: 4           # órdenes pendientes como máximo
+scene_max_age_s: 3.0       # escenas más antiguas se rechazan al planificar
+log_dir: "logs"
+captures_dir: "captures"
+save_captures: false       # no se guardan imágenes ni audio salvo opción explícita

@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clawde"
+version = "0.1.0"
+description = "CLAWDE: asistente local para un brazo robótico (voz, visión y simulación)"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.7",
+    "pyyaml>=6.0",
+    "rich>=13.7",
+    "pyserial>=3.5",
+    "ollama>=0.5",
+]
+
+[project.optional-dependencies]
+vision = [
+    "numpy>=2.0",
+    "opencv-contrib-python>=4.10",
+]
+voice = [
+    "numpy>=2.0",
+    "sounddevice>=0.5",
+    "faster-whisper>=1.1",
+]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[project.scripts]
+clawde = "clawde.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "integration: pruebas reales opt-in (Ollama, cámara, micrófono); usar --integration",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["firmware", "models", "captures", "logs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "SIM"]
+ignore = [
+    "S101",  # assert in tests
+    "S603",  # subprocess with validated argument lists
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S", "B011"]
